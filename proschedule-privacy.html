@@ -26,6 +26,8 @@
         hr { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
         .footer { font-size: 0.9em; color: #666; margin-top: 50px; text-align: center; }
         a { color: #2e7d32; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -35,43 +37,88 @@
     <div class="highlight-box">
         <h3>At a Glance: Summary of Key Points</h3>
         <ul>
-            <li><strong>Do you need an account?</strong> No traditional profile is required. ProSchedule does not ask for your name, email, or a password to function. For Pro features, we use an anonymous link to your Google Account.</li>
-            <li><strong>Where is your data stored?</strong> Your business data is stored exclusively on your own devices and within your personal, private Google Drive account.</li>
-            <li><strong>What personal information do we collect?</strong> We do not see your business data. For Pro users, we process a unique anonymous identifier strictly for cross-platform subscription management.</li>
-            <li><strong>How can you contact us?</strong> Reach us anytime at <a href="mailto:nmapps.nimi@gmail.com">nmapps.nimi@gmail.com</a>.</li>
+            <li><strong>Do you need an account?</strong> No traditional profile is required. ProSchedule does not ask for your name, email, or a password to function. For users who choose to use Pro features or the Desktop version, we use a unique, anonymous identifier linked to your Google Account to verify your subscription across devices.</li>
+            <li><strong>Where is your data stored?</strong> Your appointment schedules, pricing, and client details are stored exclusively on your own devices (Mobile and Desktop) and within your personal, private Google Drive account. We do not maintain central servers to store your business data.</li>
+            <li><strong>What personal information do we collect?</strong> We do not collect or see the business data you input. For Pro users, we process a unique anonymous identifier (a cryptographic hash) strictly to manage your cross-platform subscription and backup services.</li>
+            <li><strong>Do we process sensitive financial information?</strong> No. All subscriptions are handled securely through the Google Play Billing system. We never see or store your credit card or bank details.</li>
+            <li><strong>Who do we share your personal information with?</strong> Nobody. Your business data stays with you. NM APPS has no business data to sell, trade, or share with third parties.</li>
+            <li><strong>How can you contact us?</strong> If you have support questions, you can reach us anytime at <a href="mailto:nmapps.nimi@gmail.com">nmapps.nimi@gmail.com</a>.</li>
         </ul>
     </div>
 
+    <hr>
+
     <h3>1. Introduction</h3>
     <p>Welcome to NM APPS. We provide <strong>ProSchedule</strong>, an application designed for service owners to seamlessly schedule appointments, manage pricing, and organize client information across mobile and desktop platforms.</p>
-    <p>We believe that privacy is a fundamental right. Because ProSchedule is designed with a <strong>local-first architecture</strong>, you retain absolute control over your information. This policy explains how our app interacts with your devices, your personal Google Drive, and how we protect your privacy in compliance with global frameworks (GDPR, PIPEDA, CCPA).</p>
+    <p>We believe that privacy is a fundamental right. Because ProSchedule is designed with a <strong>local-first architecture</strong>, you retain absolute control over your information. This policy explains how our app interacts with your devices, your personal Google Drive, and how we protect your privacy in compliance with global frameworks, including the EU/UK GDPR, Canada's PIPEDA, and US state privacy laws (like the CCPA).</p>
 
     <h3>2. What We Handle &amp; How It Flows</h3>
+    <p>Because of how ProSchedule is built, your business operations remain completely private to you.</p>
+
     <p><strong>A. Your Business Data (Controlled Entirely by You)</strong><br>
-    This includes your appointment schedules, service prices, notes, and your clients' contact information. NM APPS cannot access, view, or modify this data. It never touches our servers.</p>
+    This includes your appointment schedules, service prices, notes, and your clients' contact information.
+    <ul>
+        <li><strong>Where it lives:</strong> This data is stored locally on your devices and, if you choose to enable Pro features, synced directly to your personal Google Drive.</li>
+        <li><strong>Our access:</strong> NM APPS cannot access, view, or modify this data. It never touches our servers. You are the sole owner and controller of this information.</li>
+    </ul></p>
 
     <p><strong>B. Subscription &amp; Sync Data (For Pro Users)</strong><br>
-    To enable Pro features on both mobile and desktop, we store your subscription status and an anonymous unique identifier (a cryptographic hash of your Google ID) on a secure cloud database. This does not allow us to see your name or email address.</p>
+    To enable Pro features on both your mobile and desktop devices, we store your subscription status and an anonymous unique identifier on a secure cloud database (via Google Firestore).
+    <ul>
+        <li><strong>Anonymity:</strong> This identifier is a cryptographic "hash" of your Google ID. It does not allow us to see your name or email address.</li>
+        <li><strong>Purpose:</strong> This link allows the ProSchedule Desktop app to verify that you have an active subscription on your mobile device without needing a traditional login.</li>
+    </ul></p>
 
     <p><strong>C. Technical Data (Analytics)</strong><br>
-    We collect basic technical logs (device type, OS version, and anonymous crash reports) to help us fix bugs and improve performance.</p>
+    To keep ProSchedule stable and secure, we collect basic technical logs (device type, OS version, and anonymous crash reports) via Google Analytics and Firebase.
+    <ul>
+        <li><strong>Why we need it:</strong> This helps us fix bugs and improve performance. (Legal basis: Legitimate interest in maintaining a functional application).</li>
+    </ul></p>
 
     <h3>3. Google Drive Integration</h3>
-    <p>ProSchedule uses your Google account for seamless cross-platform sync. The app only accesses a hidden, private folder (appDataFolder) created specifically for your backups. We never receive or view your Google password or your personal Drive files.</p>
+    <p>ProSchedule uses your Google account to provide seamless cross-platform sync.</p>
+    <ul>
+        <li><strong>Private appDataFolder:</strong> The app only accesses a hidden, private folder on your Google Drive created specifically for ProSchedule backups.</li>
+        <li><strong>Desktop Sync:</strong> This integration allows you to back up your data on your phone and instantly restore it on your computer.</li>
+        <li><strong>No Credentials Shared:</strong> We never receive, view, or transmit your Google password or your personal Google Drive files.</li>
+    </ul>
 
     <h3>4. Payments and Financial Data</h3>
-    <p>Financial transactions are processed securely through the Google Play Billing Library. We do not collect or store your credit card numbers or banking details.</p>
+    <p>All financial transactions are processed securely through the <strong>Google Play Billing Library</strong>.</p>
+    <ul>
+        <li>We do not collect or store your credit card numbers or billing addresses.</li>
+        <li>Google Play processes your payment and securely updates our verification system to unlock your Pro features on all your connected devices.</li>
+    </ul>
 
     <h3>5. Your Privacy Rights</h3>
-    <p>You have ultimate control over your data, including the right to access, portability, and deletion. You can stop synchronization at any time by signing out of your Google account within the app settings. Uninstalling the app and deleting your backup from Google Drive permanently erases your business data.</p>
+    <p>Because your data lives on your own devices and Google Drive, you have ultimate control:</p>
+    <ul>
+        <li><strong>Access and Portability:</strong> You can export your data directly from the app or download your database file from your Google Drive at any time.</li>
+        <li><strong>Right to Unlink:</strong> You can sign out of your Google account within the app settings to stop synchronization.</li>
+        <li><strong>Deletion:</strong> Uninstalling the app and deleting your backup from Google Drive permanently erases your business data. Because we do not host your data, we cannot recover it for you if it is deleted.</li>
+    </ul>
 
     <h3>6. Data Security</h3>
-    <p>We recommend securing your devices with a passcode or biometric lock and enabling Two-Factor Authentication (2FA) on your Google account to protect your cloud backups.</p>
+    <p>The security of your data depends on your device security. We highly recommend:</p>
+    <ol>
+        <li>Securing your devices with a passcode or biometric lock.</li>
+        <li>Enabling Two-Factor Authentication (2FA) on your Google account to protect your Drive backups.</li>
+        <li>Using the Pro "App Protection" feature to add an extra layer of security to the app itself.</li>
+    </ol>
+
+    <h3>7. Children's Privacy</h3>
+    <p>ProSchedule is a business tool designed for adults. We do not knowingly track or collect information from children under the age of 18.</p>
+
+    <h3>8. Changes to This Policy</h3>
+    <p>We may update this Privacy Policy as we add new features. We will update the "Last Updated" date and notify you via a notice inside the app settings when significant changes occur.</p>
+
+    <h3>9. Contact Us</h3>
+    <p>If you have questions about this policy or your data flow, please contact us.<br>
+    <strong>Support Email:</strong> <a href="mailto:nmapps.nimi@gmail.com">nmapps.nimi@gmail.com</a></p>
 
     <div class="footer">
         <hr>
-        <p>Generated by NM APPS — Privacy-First Professional Tools</p>
-        <p>Contact: <a href="mailto:nmapps.nimi@gmail.com">nmapps.nimi@gmail.com</a></p>
+        <p><strong>Generated by NM APPS — Privacy-First Professional Tools</strong></p>
     </div>
 </body>
 </html>
